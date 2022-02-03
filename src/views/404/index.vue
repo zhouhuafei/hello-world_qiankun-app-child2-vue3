@@ -36,14 +36,16 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   computed: {
     message () {
       return '网页不存在'
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
