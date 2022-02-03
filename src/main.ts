@@ -45,7 +45,7 @@ function storeTest (props: any) {
 }
 
 export async function bootstrap () {
-  console.log('%c ', 'color: green;', 'vue3.0 app bootstraped')
+  console.log('%c%s', 'color: green;', 'vue3.0 app bootstraped')
 }
 
 export async function mount (props: any) {
