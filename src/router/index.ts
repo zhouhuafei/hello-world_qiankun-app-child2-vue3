@@ -16,7 +16,10 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
   },
   {
-    path: '/:pathMatch(.*)',
+    // 匹配所有路径
+    // vue2使用*
+    // vue3使用/:pathMatch(.*)*或/:pathMatch(.*)或/:catchAll(.*)
+    path: '/:pathMatch(.*)*',
     name: '404',
     meta: { title: '404', hidden: true },
     component: () => import(/* webpackChunkName: "404" */ '@/views/404/index.vue')
