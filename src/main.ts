@@ -10,7 +10,8 @@ let instance: any = null
 let history: any = null
 
 function render (props: any = {}) {
-  const { container } = props
+  const { container, mainStore } = props
+  console.log('child2 mainStore：', mainStore)
   // history = createWebHistory(process.env.BASE_URL)
   history = createWebHistory((window as any).__POWERED_BY_QIANKUN__ ? '/child2' : '/')
   router = createRouter({
