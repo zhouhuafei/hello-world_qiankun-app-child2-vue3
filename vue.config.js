@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { name } = require('./package')
+const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
+  publicPath: isProd ? '/child2nginx' : '/',
   lintOnSave: false,
   devServer: {
     port: 7072,
