@@ -30,7 +30,7 @@ if (!(window as any).__POWERED_BY_QIANKUN__) {
   render()
 }
 
-// 微前端 - 主子应用通信
+// 微前端 - 主子应用通信 - 加if是因为qiankun的v3版本会移除这个api
 function storeTest (props: any) {
   if (props.onGlobalStateChange) {
     props.onGlobalStateChange((value: any, prev: any) => {
