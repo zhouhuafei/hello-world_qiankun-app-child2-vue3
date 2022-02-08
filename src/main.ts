@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import routes from './router'
 import store from './store'
+import ElementPlus from 'element-plus'
 
 let router = null
 let instance: any = null
@@ -21,6 +22,7 @@ function render (props: any = {}) {
   instance = createApp(App)
   instance.use(router)
   instance.use(store)
+  instance.use(ElementPlus, { size: 'small' })
   instance.mount(container ? container.querySelector('#app') : '#app')
 }
 

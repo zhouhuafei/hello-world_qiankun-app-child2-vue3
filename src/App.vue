@@ -1,30 +1,27 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Child2 - Home</router-link> |
-    <router-link to="/about">Child2 - About</router-link>
-  </div>
-  <router-view/>
+  <el-card style="margin: 10px;font-size: 12px;">
+    <template v-slot:header>
+      <div style="text-align: left;">子应用child2的跳转入口</div>
+    </template>
+    <el-button :icon="Link" @click="$router.push({name:'Home'})">child2 - Home</el-button>
+    <el-button :icon="Link" @click="$router.push({name:'About'})">child2 - About</el-button>
+  </el-card>
+
+  <router-view />
 </template>
 
+<script setup lang="ts">
+import { Link } from '@element-plus/icons-vue'
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  @import "@/scss/common";
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
     color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
   }
-}
 </style>

@@ -1,8 +1,7 @@
 <template>
   <div class="home">
-    <img height="200" alt="Vue logo" src="../assets/logo.png">
     <HelloWorldTsx msg="HelloWorldTsxCssModule"/>
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <HelloWorld msg="This is an child2 home page"/>
   </div>
 </template>
 
