@@ -10,8 +10,7 @@ let instance: any = null
 let history: any = null
 
 function render (props: any = {}) {
-  const { container, mainStore } = props
-  console.log('child2 mainStore：', mainStore)
+  const { container } = props
   // history = createWebHistory(process.env.BASE_URL)
   history = createWebHistory((window as any).__POWERED_BY_QIANKUN__ ? '/child2' : '/')
   router = createRouter({
@@ -32,6 +31,7 @@ if (!(window as any).__POWERED_BY_QIANKUN__) {
 
 // 微前端 - 主子应用通信 - 加if是因为qiankun的v3版本会移除这个api
 function storeTest (props: any) {
+  console.log(`主应用通过props传给子应用${props.name}的mainStore：`, props.mainStore)
   if (props.onGlobalStateChange) {
     props.onGlobalStateChange((value: any, prev: any) => {
       console.log(`在子应用${props.name}中打印变更前的状态：`, prev)
@@ -41,6 +41,12 @@ function storeTest (props: any) {
   if (props.setGlobalState) {
     props.setGlobalState({ a: 1111, b: 2222 })
   }
+  if (props.onGlobalStateChange) {
+    instance.config.globalProperties.$onGlobalStateChange = props.onGlobalStateChange
+  }
+  if (props.setGlobalState) {
+    instance.config.globalProperties.$setGlobalState = props.setGlobalState
+  }
 }
 
 export async function bootstrap () {
@@ -48,10 +54,9 @@ export async function bootstrap () {
 }
 
 export async function mount (props: any) {
+  console.log('[vue3] props from main framework', props)
   storeTest(props)
   render(props)
-  instance.config.globalProperties.$onGlobalStateChange = props.onGlobalStateChange
-  instance.config.globalProperties.$setGlobalState = props.setGlobalState
 }
 
 export async function unmount () {
