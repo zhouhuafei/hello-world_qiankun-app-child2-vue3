@@ -55,8 +55,9 @@ export async function bootstrap () {
 
 export async function mount (props: any) {
   console.log('[vue3] props from main framework', props)
-  storeTest(props)
+
   render(props)
+  storeTest(props)
 }
 
 export async function unmount () {
