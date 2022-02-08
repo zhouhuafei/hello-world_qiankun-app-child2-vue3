@@ -1,4 +1,6 @@
-/* 改变主题色变量 */
+@import '~element-plus/theme-chalk/src/common/var.scss';
+
+/* 改变主题色变量 - 若放开下面被注释的部分则需要注释掉上面未被注释的部分 */
 //@forward '~element-plus/theme-chalk/src/common/var.scss' with (
 //  $colors: (
 //    'primary': (
