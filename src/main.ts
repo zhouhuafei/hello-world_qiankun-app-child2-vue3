@@ -22,7 +22,7 @@ function render (props: any = {}) {
   instance = createApp(App)
   instance.use(router)
   instance.use(store)
-  instance.use(ElementPlus, { size: 'small' })
+  instance.use(ElementPlus, { size: 'default' })
   instance.mount(container ? container.querySelector('#app') : '#app')
 }
 
