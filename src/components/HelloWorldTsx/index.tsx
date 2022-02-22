@@ -8,15 +8,15 @@ export default defineComponent({
   props: { msg: String },
   setup (props) {
     return () => {
-      return (
+      return <>
+        <el-icon><Link /></el-icon>
         <div class={css.HelloWorldTsxCssModule}>
-          <el-icon><Link /></el-icon>
           <div>{props.msg}</div>
           <div class={css.HelloWorldTsxCssModuleText}>HelloWorldTsxCssModuleText</div>
           <div class="HelloWorldTsxCssGlobal">HelloWorldTsxCssGlobal</div>
           <div class="HelloWorldTsxCssGlobalText">HelloWorldTsxCssGlobalText</div>
         </div>
-      )
+      </>
     }
   }
 })
