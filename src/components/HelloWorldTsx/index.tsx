@@ -1,6 +1,7 @@
 import './index.global.scss'
 import css from './index.module.scss'
 import { defineComponent } from 'vue'
+import { Link } from '@element-plus/icons-vue'
 
 export default defineComponent({
   name: 'HelloWorldTsx',
@@ -9,6 +10,7 @@ export default defineComponent({
     return () => {
       return (
         <div class={css.HelloWorldTsxCssModule}>
+          <el-icon><Link /></el-icon>
           <div>{props.msg}</div>
           <div class={css.HelloWorldTsxCssModuleText}>HelloWorldTsxCssModuleText</div>
           <div class="HelloWorldTsxCssGlobal">HelloWorldTsxCssGlobal</div>
