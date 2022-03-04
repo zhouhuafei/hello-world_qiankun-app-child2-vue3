@@ -1,3 +1,5 @@
+> 本项目是使用vue-cli的4.5.15版本创建的
+
 # hello-world_qiankun-app-child2-vue3
 
 ## Project setup
